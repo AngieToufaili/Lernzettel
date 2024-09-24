@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachschüssiger Rentenrechner</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: right;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nachschüssiger Rentenrechner</h1>
+
+    <label for="rente">Jährliche Rente:</label>
+    <input type="number" id="rente" value="500"><br><br>
+
+    <label for="zins">Jährlicher Zinssatz (%):</label>
+    <input type="number" id="zins" value="2"><br><br>
+
+    <label for="laufzeit">Laufzeit (Jahre):</label>
+    <input type="number" id="laufzeit" value="5"><br><br>
+
+    <button onclick="berechneRente()">Berechnen</button>
+
+    <div id="ausgabe"></div>
+
+    <script>
+        function berechneRente() {
+            var rente = parseFloat(document.getElementById('rente').value);
+            var zins = parseFloat(document.getElementById('zins').value);
+            var laufzeit = parseFloat(document.getElementById('laufzeit').value);
+            var q = 1 +zins;
+            var jahr = 1
+			var ausgabe ='<table><thead><tr><th>Jahr</th><th>Rj</th><th>Zj</th><th></thead><tbody>';
+                
+                while (jahr<=laufzeit) {
+                    var Rj = rente *(Math.pow(q, jahr)- 1)/(q-1);
+                    var Zj = Rj * zins;
+                    var Rj_plus_1 = Rj * q;
+                   ausgabe += '<tr><td>'+ Jahr + '<tr><td>'+ Rj.toFixed(2) +'<tr><td>'+ Zj + '<tr><td>'+ r +'<tr><td>'+ Rj;
+                    vjahr++;
+                
+                }
+                
+                
+			
+
+            ausgabe += '</tbody></table>';
+            document.getElementById('ausgabe').innerHTML = ausgabe;
+        }
+    </script>
+    <a href="Startseite.html">Zurück zur Homepage</a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+<!-- saved from url=(0108)https://moodle.leo-statz-berufskolleg.de/pluginfile.php/358727/mod_resource/content/0/_div_vorlage.html.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Divisionsrechner</title>
+		
+		
+		<script>
+			"use strict";
+			
+			function fDiv() {
+				    var vDividend;
+					var vDivisor;
+					var vQuotient;
+					
+					
+					vDividend = document.getElementById("idDividend").value;
+					vDivisor = document.getElementById("idDivisor").value;
+                    
+					
+					vQuotient = vDividend / vDivisor;
+
+					var vAusgabeHtml="";
+
+					
+					vAusgabeHtml = vAusgabeHtml +  "Der Quotient von ";
+					vAusgabeHtml = vAusgabeHtml +   vDividend;
+					vAusgabeHtml = vAusgabeHtml +   " und ";
+					vAusgabeHtml = vAusgabeHtml +   vDivisor; 
+					vAusgabeHtml = vAusgabeHtml +   " ist ";
+					vAusgabeHtml = vAusgabeHtml +   vQuotient;
+					vAusgabeHtml = vAusgabeHtml +   " . "; 
+
+					document.getElementById("idAusgabeHtml").innerHTML = vAusgabeHtml; 
+		
+			
+			
+			
+			}
+		
+		</script>
+	
+		</head><body><h1>Divisionsrechner</h1>
+        Dividend: <input id="idDividend" type="text" value="10"><br><br>
+		Divisor: <input id="idDivisor" type="text" value="5"><br><br>
+       <button onclick="fDiv();">Berechne Quotient</button><br>
+	   <br>
+        <div id="idAusgabeHtml"></div>
+		<a href="Startseite.html">Zurück zur Homepage</a>
+</body></html>
